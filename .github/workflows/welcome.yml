@@ -1,4 +1,5 @@
 name: Welcome
+# This is a demo workflow to show relationships between workflows
 
 on:
   workflow_dispatch:
@@ -7,4 +8,4 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'Welcome to Arlen'
+      - run: echo ${{ secrets.SHARED_SECRET }} | rev
