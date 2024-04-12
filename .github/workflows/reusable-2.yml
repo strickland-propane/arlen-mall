@@ -1,0 +1,16 @@
+# Second reusable workflow with a designated secret
+name: Reusable
+
+on:
+  workflow_call:
+    secrets:
+      arlen_secret:
+        required: false
+
+jobs:
+  reuse-print:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: arlen_secret
+        run: echo \"${{ secrets.arlen_secret }}\" | rev
