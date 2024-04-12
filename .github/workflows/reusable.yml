@@ -1,0 +1,13 @@
+name: Reusable
+
+on:
+  workflow_call:
+
+jobs:
+  reuse-print:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: >
+          echo "SHARED_SECRET: "
+          echo \"${{ secrets.SHARED_SECRET }}\" | rev
