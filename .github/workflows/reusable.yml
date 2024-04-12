@@ -8,6 +8,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: |
-          echo: "SHARED_SECRET: "
-          echo ${{ secrets.SHARED_SECRET }} | rev
+      - name: SHARED_SECRET
+        run: echo \"${{ secrets.SHARED_SECRET }}\" | rev
